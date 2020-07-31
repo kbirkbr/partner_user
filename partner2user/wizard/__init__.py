@@ -1,3 +1,3 @@
 # -*- coding: utf-8 -*-
 
-import user
+from . import user

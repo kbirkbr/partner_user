@@ -28,7 +28,8 @@ class CreateUser(models.TransientModel):
                         'login':da.login,
                         'groups_id':da.groups_id
                         }
-                self.env['res.users'].create(vals)
+                user = self.env['res.users'].create(vals)
+                da.partner_id.user_id = user.id
 
 class CreateUserData(models.TransientModel):
     _name='user.datas'

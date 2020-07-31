@@ -8,7 +8,7 @@
     <field name="arch" type="xml">
       <xpath expr="//form/sheet" position="before">
         <header>
-            <button string="Create login"  name="%(partner2user.act_createa_user_partner)d"  type="action" class="oe_highlight"/>
+            <button string="Create login" attrs="{'invisible':[('user_id', '!=', False)]}"  name="%(partner2user.act_createa_user_partner)d"  type="action" class="oe_highlight"/>
         </header>
       </xpath>
     </field>

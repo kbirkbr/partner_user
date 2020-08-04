@@ -3,6 +3,7 @@
 
 from odoo import api, fields, models
 import re
+import unidecode
 
 class CreateUser(models.TransientModel):
     _name = 'partner.user'

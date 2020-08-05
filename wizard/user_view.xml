@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
+<data>
   <record id="wizar_user_view_form" model="ir.ui.view">
     <field name="name">wizard.user.form</field>
     <field name="model">partner.user</field>
     <field name="arch" type="xml">
       <form string="">
         <sheet>
-
             <field name="groups_id" widget="many2many_tags"/>
         <field name="user_data" readonly="0">
           <tree editable="bottom">
@@ -22,7 +22,21 @@
       </form>
     </field>
   </record>
-
+  <record id="wizar_user_view_form_excel" model="ir.ui.view">
+    <field name="name">wizard.user.excel.form</field>
+    <field name="model">excel.download.wizard.user</field>
+    <field name="arch" type="xml">
+      <form options="{'initial_mode': 'view'}" readonly="1" string="">
+        <sheet>
+            <field name="binary"  filename="file_name" widget="binary"/>
+          <field name="file_name" invisible="1"/>
+        </sheet>
+        <footer>
+            <button string="Cerrar" class="btn-default" special="cancel" />
+        </footer>
+      </form>
+    </field>
+  </record>
   <act_window name="Create User"
       res_model="partner.user"
       src_model="res.partner"
@@ -31,4 +45,4 @@
       key2="client_action_multi"
       id="act_createa_user_partner"
       multi="True"/>
-</odoo>
+</data></odoo>
